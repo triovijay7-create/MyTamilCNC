@@ -57,5 +57,22 @@
       "TvSeries"
     ],
     "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/dev.nivincnc.cncverse.moviebox.sky"
+  },
+  {
+    "packageName": "com.sethu.cnc.ppvlive",
+    "name": "PPVLive",
+    "version": 1,
+    "baseUrl": "https://example.com",
+    "description": "PPVLive plugin for cnc-skystream",
+    "authors": [
+      "Developer"
+    ],
+    "languages": [
+      "en"
+    ],
+    "categories": [
+      "Others"
+    ],
+    "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/com.sethu.cnc.ppvlive.sky"
   }
 ]
