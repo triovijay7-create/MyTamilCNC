@@ -1,5 +1,25 @@
 [
   {
+    "packageName": "dev.nivincnc.cncverse.castletv",
+    "name": "Castle TV",
+    "version": 1,
+    "baseUrl": "https://api.hlowb.com",
+    "description": "Castle TV Movies and Series Provider",
+    "authors": [
+      "NivinCNC"
+    ],
+    "languages": [
+      "en",
+      "hi",
+      "ta"
+    ],
+    "categories": [
+      "Movie",
+      "TvSeries"
+    ],
+    "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/dev.nivincnc.cncverse.castletv.sky"
+  },
+  {
     "packageName": "com.sethu.cnc.cncverse",
     "name": "CNCVerse",
     "version": 1,
@@ -15,5 +35,44 @@
       "Others"
     ],
     "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/com.sethu.cnc.cncverse.sky"
+  },
+  {
+    "packageName": "dev.nivincnc.cncverse.cricfy",
+    "name": "Cricfy",
+    "version": 2,
+    "baseUrl": "https://cfymarkscanjiostar80.top",
+    "description": "Cricfy IPTV provider To Watch Live sports and TV channels",
+    "authors": [
+      "NivinCNC"
+    ],
+    "languages": [
+      "en",
+      "hi",
+      "ta"
+    ],
+    "categories": [
+      "LiveTv"
+    ],
+    "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/dev.nivincnc.cncverse.cricfy.sky"
+  },
+  {
+    "packageName": "dev.nivincnc.cncverse.moviebox",
+    "name": "MovieBox",
+    "version": 1,
+    "baseUrl": "https://api3.aoneroom.com",
+    "description": "Multi Language Movies and Series Provider",
+    "authors": [
+      "NivinCNC"
+    ],
+    "languages": [
+      "en",
+      "hi",
+      "ta"
+    ],
+    "categories": [
+      "Movie",
+      "TvSeries"
+    ],
+    "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/dev.nivincnc.cncverse.moviebox.sky"
   }
 ]
