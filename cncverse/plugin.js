@@ -3,18 +3,21 @@
     const BASE_URL = "https://ppv.to";
 
     async function getHome(cb) {
+        // Basic home with main sports categories from ppv.to
         cb({
             success: true,
             data: {
-                "Live Cricket & PPV": [],
+                "Live Cricket & IPL": [],
                 "24/7 Streams": [],
-                "Popular Sports": []
+                "Football & Premier League": [],
+                "Combat Sports & UFC": [],
+                "Other Sports": []
             }
         });
     }
 
     async function search(query, cb) {
-        // For now, placeholder. We'll improve later.
+        // Simple search for now (we'll improve if needed)
         cb({ success: true, data: [] });
     }
 
@@ -23,7 +26,7 @@
     }
 
     async function loadStreams(url, cb) {
-        // This is where we will put real stream extraction from ppv.to
+        // Placeholder - real stream extraction will go here
         cb({ success: true, data: [] });
     }
 
