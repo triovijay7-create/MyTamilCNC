@@ -31,7 +31,6 @@
     }
 
     async function load(url, cb) {
-        // When you click an item, show basic info + fake stream button
         const item = new MultimediaItem({
             title: "Live Sports Stream",
             url: url,
@@ -45,12 +44,18 @@
     }
 
     async function loadStreams(url, cb) {
-        // Placeholder streams (we will add real ppv.to streams later)
+        // Placeholder stream (this should show a playable option)
         cb({
             success: true,
             data: [
                 new StreamResult({
-                    url: "https://example.com/sample.m3u8",   // temporary
+                    url: "https://test-streams.mux.dev/x264_720p_1500kbps_30fps.mp4",  // public test video
+                    quality: "720p",
+                    server: "Test Stream",
+                    headers: {}
+                }),
+                new StreamResult({
+                    url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny_720p.mp4",
                     quality: "1080p",
                     server: "PPV Mirror",
                     headers: {}
