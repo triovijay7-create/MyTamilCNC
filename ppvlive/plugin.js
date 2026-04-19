@@ -1,61 +1,69 @@
 (function() {
 
+    const API_BASE = "https://api.ppv.to";
+
     async function getHome(cb) {
-        cb({
-            success: true,
-            data: {
-                "Live Cricket & PPV": [
-                    new MultimediaItem({
-                        title: "IPL Live - Test Match",
-                        url: "https://ppv.to/cricket",
-                        posterUrl: "https://picsum.photos/id/1015/300/450",
-                        type: "movie"
-                    }),
-                    new MultimediaItem({
-                        title: "India vs Australia Live",
-                        url: "https://ppv.to/live",
-                        posterUrl: "https://picsum.photos/id/201/300/450",
-                        type: "movie"
-                    })
-                ],
-                "24/7 Sports Streams": [
-                    new MultimediaItem({
-                        title: "Cricket 24/7",
-                        url: "https://ppv.to/247",
-                        posterUrl: "https://picsum.photos/id/133/300/450",
-                        type: "series"
-                    })
-                ]
+        try {
+            const res = await fetch(`${API_BASE}/api/streams`);
+            const json = await res.json();
+
+            if (!json.success || !json.streams) {
+                throw new Error("API failed");
             }
-        });
+
+            const sections = {};
+
+            json.streams.forEach(cat => {
+                const items = cat.streams.map(s => new MultimediaItem({
+                    title: s.name,
+                    url: `${API_BASE}/stream/${s.uri_name || s.id}`,
+                    posterUrl: s.poster || "https://picsum.photos/id/1015/300/450",
+                    type: "movie",
+                    year: new Date(s.starts_at * 1000).getFullYear()
+                }));
+
+                if (items.length > 0) {
+                    sections[cat.category || "Live Events"] = items;
+                }
+            });
+
+            cb({
+                success: true,
+                data: sections
+            });
+        } catch (e) {
+            // Fallback if API fails
+            cb({
+                success: true,
+                data: {
+                    "Live Cricket & PPV": [
+                        new MultimediaItem({ title: "IPL / Cricket Live", url: "https://ppv.to/cricket", posterUrl: "https://picsum.photos/id/1015/300/450", type: "movie" })
+                    ]
+                }
+            });
+        }
     }
 
     async function load(url, cb) {
         const item = new MultimediaItem({
-            title: "Live Sports Stream",
+            title: "Live Event",
             url: url,
             posterUrl: "https://picsum.photos/id/1015/300/450",
             type: "movie",
-            description: "Live event from ppv.to",
-            year: 2026
+            description: "Live stream from ppv.to"
         });
         cb({ success: true, data: item });
     }
 
     async function loadStreams(url, cb) {
+        // For now, using reliable public test streams (real extraction is complex)
         cb({
             success: true,
             data: [
                 new StreamResult({
                     url: "https://test-streams.mux.dev/x264_720p_1500kbps_30fps.mp4",
                     quality: "720p",
-                    server: "Test Mirror",
-                    headers: {}
-                }),
-                new StreamResult({
-                    url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny_720p.mp4",
-                    quality: "1080p",
-                    server: "Test Mirror 2",
+                    server: "Test Stream",
                     headers: {}
                 })
             ]
