@@ -20,23 +20,6 @@
     "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/dev.nivincnc.cncverse.castletv.sky"
   },
   {
-    "packageName": "com.sethu.cnc.cncverse",
-    "name": "CNCVerse",
-    "version": 1,
-    "baseUrl": "https://example.com",
-    "description": "CNCVerse plugin (Sky Gen 2)",
-    "authors": [
-      "SethuBharathy"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Others"
-    ],
-    "url": "https://raw.githubusercontent.com/triovijay7-create/MyTamilCNC/main/dist/com.sethu.cnc.cncverse.sky"
-  },
-  {
     "packageName": "dev.nivincnc.cncverse.cricfy",
     "name": "Cricfy",
     "version": 2,
