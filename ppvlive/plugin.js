@@ -4,10 +4,28 @@
         cb({
             success: true,
             data: {
-                "Live Cricket": [],
-                "24/7 Sports": [],
-                "Football": [],
-                "UFC & Boxing": []
+                "Live Cricket & PPV": [
+                    new MultimediaItem({
+                        title: "IPL Live - Test Match",
+                        url: "https://ppv.to/cricket",
+                        posterUrl: "https://picsum.photos/id/1015/300/450",
+                        type: "movie"
+                    }),
+                    new MultimediaItem({
+                        title: "India vs Australia Live",
+                        url: "https://ppv.to/live",
+                        posterUrl: "https://picsum.photos/id/201/300/450",
+                        type: "movie"
+                    })
+                ],
+                "24/7 Sports Streams": [
+                    new MultimediaItem({
+                        title: "Cricket 24/7",
+                        url: "https://ppv.to/247",
+                        posterUrl: "https://picsum.photos/id/133/300/450",
+                        type: "series"
+                    })
+                ]
             }
         });
     }
