@@ -36,21 +36,20 @@
             url: url,
             posterUrl: "https://picsum.photos/id/1015/300/450",
             type: "movie",
-            description: "Live event from ppv.to - Tap Play to watch",
+            description: "Live event from ppv.to",
             year: 2026
         });
         cb({ success: true, data: item });
     }
 
     async function loadStreams(url, cb) {
-        // Real public test streams that should play
         cb({
             success: true,
             data: [
                 new StreamResult({
                     url: "https://test-streams.mux.dev/x264_720p_1500kbps_30fps.mp4",
                     quality: "720p",
-                    server: "Test Mirror 1",
+                    server: "Test Mirror",
                     headers: {}
                 }),
                 new StreamResult({
