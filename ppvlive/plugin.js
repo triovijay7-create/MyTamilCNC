@@ -36,28 +36,27 @@
             url: url,
             posterUrl: "https://picsum.photos/id/1015/300/450",
             type: "movie",
-            description: "Live event from ppv.to - Click Play below to watch",
+            description: "Live event from ppv.to - Tap Play to watch",
             year: 2026
         });
-
         cb({ success: true, data: item });
     }
 
     async function loadStreams(url, cb) {
-        // Placeholder stream (this should show a playable option)
+        // Real public test streams that should play
         cb({
             success: true,
             data: [
                 new StreamResult({
-                    url: "https://test-streams.mux.dev/x264_720p_1500kbps_30fps.mp4",  // public test video
+                    url: "https://test-streams.mux.dev/x264_720p_1500kbps_30fps.mp4",
                     quality: "720p",
-                    server: "Test Stream",
+                    server: "Test Mirror 1",
                     headers: {}
                 }),
                 new StreamResult({
                     url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny_720p.mp4",
                     quality: "1080p",
-                    server: "PPV Mirror",
+                    server: "Test Mirror 2",
                     headers: {}
                 })
             ]
